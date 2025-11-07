@@ -1,0 +1,405 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --catracabloqueada: #ff1e1e7c;
+  --btnimportant: #2563eb;
+  --background: #1f2937;
+  --painel: #6b7280;
+  --number: #d9d9d9;
+  --texto: #ffffff;
+  --btnaction: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--background);
+  color: var(--texto);
+}
+
+header {
+  font-family: "Poppins", sans-serif;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 30px;
+  margin: 0;
+  margin-left: 20px;
+}
+
+header p {
+  margin-top: 2px;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+hr {
+  border: 1px solid #6b7280;
+  border: 2;
+  height: 2px;
+  width: calc(100vw - 80px);
+  margin-right: auto;
+  margin-left: auto;
+  background: #6b7280;
+}
+
+main {
+  max-height: 100vh;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+
+#resumo-cards {
+  width: 25%;
+  height: calc(100vh - 150px);
+  margin: auto;
+  margin-top: -5px;
+  /* centraliza todo o painel */
+  background: var(--painel);
+  padding: 25px;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+#resumo-cards h2 {
+  margin-top: 23px;
+  margin-left: 5px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 520;
+}
+
+#resumo-cards #resumop {
+  font-size: 17px;
+  padding-left: 15px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  color: var(--texto);
+}
+
+#resumo-cards strong {
+  color: var(--texto);
+}
+
+#resumo-cards h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 520;
+}
+
+#resumo-cards ul {
+  padding-left: 15px;
+  color: var(--texto);
+  font-size: 16.4px;
+  line-height: 1.3;
+}
+
+#resumo-cards ul li {
+  margin-bottom: 10px;
+}
+
+#resumo-cards #equidade {
+  padding-left: 15px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--texto);
+}
+
+.back {
+  font-family: "Inter", sans-serif;
+  width: 210px;
+  height: auto;
+  padding: 10px 12px;
+  margin-top: 30px;
+  border: none;
+  border-radius: 12px;
+  background: var(--btnaction);
+  color: #ffffff;
+  font-weight: 550;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.2s;
+}
+
+.back:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  /* leve elevação */
+  box-shadow: 0 4px 12px rgba(1, 29, 90, 0.3);
+  /* brilho */
+  background-color: #1f2937;
+}
+
+/* Acessibilidade: foco via teclado */
+.back:focus-visible {
+  outline: 3px solid #93c5fd;
+  /* azul claro */
+  outline-offset: 2px;
+}
+
+/* Efeito quando pressionado */
+.back:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(9, 24, 56, 0.2);
+}
+
+
+#dashboard {
+  width: 75%;
+  height: calc(100vh - 150px);
+  margin: auto;
+  margin-top: -5px;
+  /* centraliza todo o painel */
+  background: var(--painel);
+  padding: 25px;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+#dashboard h2 {
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 520;
+}
+
+/* Reset/normalização do select para visual consistente */
+#dashboard select {
+  -webkit-appearance: none;
+  /* remove estilo nativo WebKit */
+  -moz-appearance: none;
+  /* remove estilo nativo Firefox */
+  appearance: none;
+  display: inline-block;
+  padding: 8px 36px 8px 12px;
+  /* espaço interno: esquerda para texto, direita p/ ícone */
+  line-height: 1.25;
+  /* garante alinhamento vertical do texto */
+  height: auto;
+  /* evita que alguns browsers forcem altura estranha */
+  border-radius: 8px;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  background-color: var(--texto);
+  /* seu branco */
+  color: var(--btnaction);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  box-sizing: border-box;
+  /* faz padding contar dentro da largura */
+  vertical-align: middle;
+}
+
+/* esconder seta nativa no IE/Edge */
+#dashboard select::-ms-expand {
+  display: none;
+}
+
+/* ajustar o caret customizado (opcional): coloca um triângulo à direita sem imagem */
+#dashboard .select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+#dashboard .select-wrapper::after {
+  content: "▾";
+  /* símbolo unicode de seta */
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--btnaction);
+  /* cor da seta */
+  pointer-events: none;
+}
+
+/* Normaliza a aparência dos option (sujeito a limitações do browser) */
+#dashboard select option {
+  padding: 8px 12px;
+  /* espaçamento do texto dentro da opção */
+  line-height: 1.5;
+  /* evita que o texto pareça "torto" verticalmente */
+  color: var(--btnaction);
+  background: var(--texto);
+  text-align: left;
+}
+
+/* Quando o select abre, em alguns browsers o item selecionado ganha fundo diferente.
+   Isso deixa menos choque visual (poderá continuar variando por browser). */
+#dashboard select:focus,
+#dashboard select:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Se quiser que dropdown tenha a mesma largura do select (útil se estiver maior por conteúdo) */
+#dashboard select {
+  min-width: 180px;
+  /* ajuste conforme sua UI */
+  width: auto;
+  /* ou use 100% se preferir ocupar tudo do contêiner */
+}
+
+
+#cards {
+  width: 1000px;
+  height: 110px;
+  margin-top: 10px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cards .bg-gray-700 {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  background-color: var(--texto);
+  color: var(--texto);
+  border-radius: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#cards .bg-gray-700 #number {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin: 0;
+  color: var(--btnaction);
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+#cards .text-sm {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin: 2px;
+  color: var(--btnaction);
+  font-size: 17px;
+  margin-top: 12px;
+}
+
+/* Graficos */
+
+#grafico-1 {
+  margin-top: 35px;
+  display: flex;
+  /* muda de grid para flex */
+  justify-content: center;
+  /* centraliza horizontalmente */
+  align-items: flex-start;
+  /* alinha pelo topo */
+  gap: 100px;
+  /* espaço entre os dois gráficos */
+  width: 100%;
+  flex-wrap: wrap;
+  /* permite quebrar linha em telas pequenas */
+}
+
+#grafico-1 #grafico-container {
+  height: 270px;
+  width: 450px;
+  align-items: center;
+  background-color: var(--texto);
+  border-radius: 16px;
+  box-sizing: border-box;
+  color: var(--btnaction);
+}
+
+#grafico-container h3 {
+  font-size: 17px;
+  font-weight: 520;
+  margin-bottom: 20px;
+}
+
+#grafico-2 {
+  height: 270px;
+  width: 450px;
+  background-color: var(--texto);
+  border-radius: 16px;
+  box-sizing: border-box;
+  color: var(--btnaction);
+  display: flex;
+  /* coloca texto e gráfico lado a lado */
+  align-items: center;
+  /* centraliza verticalmente */
+  justify-content: space-between;
+  /* separa os dois elementos */
+  gap: 20px;
+  /* espaço entre o texto e o gráfico */
+}
+
+#grafico-2 h3 {
+  margin-top: -12px;
+  font-size: 17px;
+  font-weight: 520;
+}
+
+#grafico-2 ul {
+  margin-top: 40px;
+}
+
+#grafico-2 ul li {
+  color: var(--btnaction);
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+#pieChart {
+  width: 250px !important;
+  height: 250px !important;
+}
+
+#evolucao {
+  align-items: center;
+  background: var(--texto);
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto 0 auto;
+  border-radius: 16px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+}
+
+#evolucao h3 {
+  color: var(--btnaction);
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+#evolucao canvas {
+  width: 100% !important;
+  height: 120px !important;
+  /* ← Altura reduzida */
+}
+
+footer {
+  margin-top: -10px;
+  text-align: center;
+  color: var(--texto);
+  font-size: 12px;
+}
+
+/* Sombras suaves e bordas arredondadas */
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

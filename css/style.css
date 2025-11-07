@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --catracabloqueada: #ff1e1e7c;
+  --btnimportant: #2563eb;
+  --background: #1f2937;
+  --painel: #6b7280;
+  --number: #d9d9d9;
+  --texto: #ffffff;
+  --btnaction: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--background);
+  color: var(--texto);
+}
+
+header {
+  padding: 5px;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+h1 {
+  font-size: 30px;
+  margin: 0;
+  margin-left: 20px;
+}
+
+p {
+  margin-left: -12px;
+  margin-top: 22px;
+  font-size: 18px;
+}
+
+hr {
+  border: 0;
+  height: 2px;
+  background: #6b7280;
+  margin: 0 16px;
+}
+
+main {
+  max-height: 100vh;
+  display: grid;
+  gap: 16px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.container {
+  width: 100%;
+  display: flex; /* coloca os painéis lado a lado */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.2rem; /* espaço (gap) entre os painéis */
+  padding: 1rem;
+  height: calc(100vh - 170px);
+}
+
+.container h3 {
+  font-size: 20px;
+  margin: 6px;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+#numero {
+  background-color: var(--number);
+  padding: 0px 10px;
+  margin-right: 5px;
+  border-radius: 100%;
+  font-weight: 600;
+}
+
+/*PAINEL CATRACA*/
+
+.painel-catraca {
+  flex: 1; /* ocupa menos espaço */
+  width: 50%; /* limite de largura (ajuste conforme preferir) */
+  padding: 1rem;
+  background: var(--painel);
+  border-radius: 16px;
+  padding: 30px;
+  height: calc(100vh - 180px);
+}
+
+.video-container {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  display: block;
+  background: #000;
+}
+
+/* Canvas fica exatamente sobre o vídeo */
+.video-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* permite clicar nos botões */
+  border-radius: 12px; /* mantém o mesmo formato do vídeo */
+}
+
+.controles {
+  flex-direction: column;
+  gap: 8px;
+  width: 80%;
+}
+
+.linha-controles {
+  display: grid;
+  padding: 0px 10px;
+  grid-template-columns: auto max-content;
+  align-items: flex-start;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  gap: 16px;
+}
+.linha {
+  margin-top: 20px;
+  margin-left: -2px;
+  gap: 20px;
+}
+
+.linha button {
+  margin-right: 5px;
+}
+
+/* Texto de status */
+.grade {
+  margin-top: -5px;
+  text-align: justify;
+  font-size: 14px;
+}
+
+.status {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.fallback {
+  margin-top: -22px;
+  text-align: right;
+  margin-right: 5px;
+}
+
+.fallback h4 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.botoes-fallback {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 38px;
+}
+
+.painel-cadastro {
+  flex: 1;
+  background: var(--painel);
+  padding: 30px;
+  width: 50%;
+  border-radius: 16px;
+  height: calc(100vh - 180px);
+  overflow-y: auto;
+}
+
+#statusCatraca {
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.catraca-bloqueada {
+  background-color: var(--catracabloqueada);
+  font-size: 17px;
+  width: 250px;
+  padding: 10px 0px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: auto; /*centraliza horizontalmente*/
+  margin-right: auto; /*centraliza horizontalmente*/
+}
+
+.catraca-liberada {
+  background-color: #16a34a;
+  font-size: 17px;
+  width: 250px;
+  padding: 10px 0px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: auto; /*centraliza horizontalmente*/
+  margin-right: auto; /*centraliza horizontalmente*/
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: 450;
+  color: var(--texto);
+  margin-top: 20px;
+  margin-bottom: 4px;
+  padding-left: 8px;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  padding-inline: 10px;
+  border-radius: 10px;
+  background-color: var(--background);
+  color: var(--texto);
+  font-family: "Poppins", sans-serif;
+}
+
+#faixaetaria {
+  width: 50%;
+}
+
+select {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  padding-inline: 10px;
+  border-radius: 10px;
+  color: var(--texto);
+  font-family: "Poppins", sans-serif;
+  appearance: none; /* remove a seta padrão do navegador */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg fill="white" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4z"/></svg>')
+    no-repeat right 0.75rem center;
+  background-color: #1f2937; /* cor do input (exemplo Tailwind gray-800) */
+  color: white;
+  padding-right: 2.5rem; /* espaço pra nova seta */
+}
+button {
+  font-family: "Inter", sans-serif;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 12px;
+  background: var(--btnimportant);
+  color: #ffffff;
+  font-weight: 550;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.2s;
+}
+
+button.principal:hover {
+  opacity: 0.9;
+  transform: translateY(-1px); /* leve elevação */
+  box-shadow: 0 4px 12px rgba(1, 29, 90, 0.3); /* brilho */
+  background-color: #3872f0aa;
+}
+
+button.secondary {
+  font-family: "Inter", sans-serif;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 12px;
+  background: var(--btnaction);
+  color: #ffffff;
+  font-weight: 550;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.2s;
+}
+
+button.secondary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px); /* leve elevação */
+  box-shadow: 0 4px 12px rgba(1, 29, 90, 0.3); /* brilho */
+  background-color: #1f2937;
+}
+/* Acessibilidade: foco via teclado */
+button.secondary :focus-visible {
+  outline: 3px solid #93c5fd; /* azul claro */
+  outline-offset: 2px;
+}
+/* Efeito quando pressionado */
+button.secondary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(9, 24, 56, 0.2);
+}
+
+/* Efeito quando pressionado */
+button.principal:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+}
+
+.grid h4 {
+  margin-bottom: -10px;
+  margin-top: 40px;
+  font-size: 19px;
+  font-weight: 520;
+}
+
+.grid a {
+  color: #86cef8;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.button button {
+  margin-top: 15px;
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #1f2937;
+}
+.badge.ok {
+  background: #062f1f;
+  color: #a7f3d0;
+}
+.badge.fail {
+  background: #3b0a0a;
+  color: #fecaca;
+}
+
+footer {
+  text-align: center;
+  padding: 16px;
+  color: var(--texto);
+  font-size: 12px;
+}
+
+/* ======================== */
+/* ESTILOS DA NOTIFICAÇÃO (TOAST) */
+/* ======================== */
+
+.toast-notification {
+  /* Posição no canto superior direito (ou onde preferir) */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  /* Por padrão, fica oculto e transparente */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%); /* Escondido fora da tela à direita */
+
+  /* Estilos visuais */
+  background-color: #16a34a; /* Cor de sucesso (Catraca Liberada) */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 2000; /* Alto z-index para garantir visibilidade */
+  max-width: 300px;
+
+  /* Transições para animação suave */
+  transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s ease, visibility 0.5s;
+}
+
+/* Estilo do título/nome */
+#toastTitle {
+  font-size: 18px;
+  margin: 0 0 5px 0;
+}
+
+/* Estilo da mensagem */
+#toastMessage {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* CLASSE PARA EXIBIR: move para dentro da tela e torna visível */
+.toast-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* ======================== */
+/* ESTILO DE FALHA (BLOQUEADA) */
+/* ======================== */
+
+/* Classe a ser adicionada ao .toast-notification quando for uma falha */
+.toast-failure {
+    background-color: var(--catracabloqueada); /* Cor vermelha para falha/bloqueio */
+    box-shadow: 0 4px 12px rgba(119, 119, 119, 0.4); /* Sombra mais escura */
+}
+
+/* Garante que o texto de falha seja branco (se for necessário) */
+.toast-failure #toastTitle,
+.toast-failure #toastMessage {
+    color: white;
+}

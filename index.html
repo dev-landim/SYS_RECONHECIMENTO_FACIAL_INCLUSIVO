@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facial Fair Access - Protótipo</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!--  Bibliotecas externas -->
+
+    <!--  Seus scripts (ordem é importante!) -->
+    <!--<script defer type="module" scr="/public/js/camera.js"></script> -->
+  </head>
+
+  <body>
+    <header>
+      <h1>Facial Fair Access <span style="font-weight: 200"> | </span></h1>
+      <p>Protótipo de testes e inclusão</p>
+    </header>
+    <hr />
+
+    <main>
+      <div class="container">
+        <div class="painel-catraca" id="catraca">
+          <h3><span id="numero">1</span> Catraca (Simulação)</h3>
+          <div id="statusCatraca" class="catraca-bloqueada">
+            Catraca Bloqueada
+          </div>
+
+          <div class="catraca-layout">
+            <div class="video-section">
+              <div class="video-container">
+                <video id="video" autoplay muted playsinline></video>
+                <canvas id="canvas"></canvas>
+              </div>
+
+              <div class="linha-controles">
+                <div class="controles">
+                  <div class="grade">
+                    <div class="status">
+                      Similaridade : <span id="simVal">—</span> (limiar
+                      <span id="thVal">0.8</span>)
+                    </div>
+                    <div class="status">
+                      Status: <span id="status">Aguardando...</span>
+                    </div>
+                    <div class="linha">
+                      <button id="btnStartCam" class="principal">
+                        Iniciar Câmera
+                      </button>
+                      <button id="btnCapturar" class="principal">
+                        Tentar Reconhecimento
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="fallback">
+                  <h4>Plano B (fallback): NFC</h4>
+                  <div class="botoes-fallback">
+                    <button id="btnfallback" class="principal">
+                      Liberar Catraca
+                    </button>
+                    <button id="btnLock" class="secondary">
+                      Bloquear Catraca
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Painel de cadastro -->
+        <div class="painel-cadastro" id="cadastro">
+          <h3><span id="numero">2</span> Cadastro & Amostras</h3>
+
+          <div class="info">
+            <label> Nome </label>
+            <input type="text" id="uNome" placeholder="Ana Silva" />
+            <label> Documento (único) </label>
+            <input type="text" id="uDoc" placeholder="12345678900" />
+            <div class="row">
+              <div style="flex: 1">
+                <label>Gênero</label>
+                <select id="uGender">
+                  <option value="female">Feminino</option>
+                  <option value="male">Masculino</option>
+                  <option value="nonbinary">Não-binário</option>
+                  <option value="other">Outro</option>
+                  <option value="prefer_not" selected>
+                    Prefiro não informar
+                  </option>
+                </select>
+              </div>
+              <div style="flex: 1">
+                <label>Etnia (auto declaração)</label>
+                <select id="uEth">
+                  <option value="black">Preta</option>
+                  <option value="brown">Parda</option>
+                  <option value="white">Branca</option>
+                  <option value="indigenous">Indígena</option>
+                  <option value="asian">Amarela</option>
+                  <option value="other">Outra</option>
+                  <option value="prefer_not" selected>
+                    Prefiro não informar
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="row" id="faixaetaria">
+              <div style="flex: 1">
+                <label>Faixa etária</label>
+                <select id="uAge">
+                  <option value="under18">Menor de 18</option>
+                  <option value="18_29">18 a 29</option>
+                  <option value="30_44">30 a 44</option>
+                  <option value="45_59">45 a 59</option>
+                  <option value="60_plus">60+</option>
+                  <option value="prefer_not" selected>
+                    Prefiro não informar
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="button" style="margin-top: 8px">
+            <button id="btnCreateUser" class="principal">Criar usuário</button>
+            <button id="btnAddSamples" class="secondary">
+              Adicionar amostras
+            </button>
+          </div>
+
+          <div class="grid" style="margin-top: 16px">
+            <h4>Amostras por Usuário</h4>
+            <a href="dash.html" target="_blank">Abrir dashboard de métricas</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>Protótipo educativo | Facial Fair Access © 2025</footer>
+
+    <div id="welcomeToast" class="toast-notification">
+      <div class="toast-content">
+        <h3 id="toastTitle"></h3>
+        <p id="toastMessage"></p>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

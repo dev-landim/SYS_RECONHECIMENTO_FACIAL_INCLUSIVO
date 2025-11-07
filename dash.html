@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Facial Fair Access</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="/css/dash.css" />
+</head>
+
+<body>
+  <header>
+    <!-- Cabeçalho com nome do projeto-->
+    <h1>Facial Fair Access <span style="font-weight: 200"> | </span></h1>
+    <p>Dashboard de métricas</p>
+  </header>
+  <hr />
+
+  <main class="flex lg:flex-row gap-6 p-6">
+    <!-- Painel de resumo -->
+    <section id="resumo-cards" class="bg-gray-800 rounded-2xl p-6 w-full lg:w-1/3 shadow-lg">
+      <h2 class="text-lg font-semibold mb-4">Resumo</h2>
+      <p id="resumop" class="text-sm text-gray-300 mb-3">
+        Neste período foram realizadas
+        <strong>450 leituras faciais</strong>;<br />
+        <strong>95%</strong> tiveram sucesso;<br />
+        <strong>5%</strong> apresentaram erro;<br />
+        <strong>120</strong> acessos foram feitos via NFC.
+      </p>
+
+      <h3 class="text-md font-semibold mt-4 mb-2">Destaques</h3>
+      <ul class="text-sm text-gray-300 list-disc pl-5 space-y-1">
+        <li>
+          Grupo A teve a maior
+          <strong>
+            taxa de <br />
+            sucesso (98%) </strong>;
+        </li>
+        <li>
+          Grupo B apresentou maior erro <br />
+          <strong> (12% vs média de 5%) </strong>;
+        </li>
+        <li>
+          Tendência: melhora contínua nos <br />
+          últimos <strong> 3 meses </strong>.
+        </li>
+      </ul>
+
+      <h3 class="text-md font-semibold mt-6 mb-2">Equidade e Inclusão</h3>
+      <p id="equidade" class="text-sm text-gray-300">
+        Foram avaliados <strong>5 grupos</strong> demográficos;<br />
+        Diferença entre maior e menor taxa <br />
+        de sucesso = <strong>10%</strong>.
+      </p>
+
+      <button class="back"><a href="index.html">Cadastrar novo usuário</a></button>
+
+    </section>
+
+    <!-- Painel principal do dashboard -->
+    <section id="dashboard" class="bg-gray-800 rounded-2xl p-6 w-full lg:w-2/3 shadow-lg">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Dashboard</h2>
+        <div class="select-wrapper">
+          <select class="bg-gray-700 text-white text-sm rounded-lg p-2 focus:outline-none">
+            <option>Selecionar período</option>
+            <option>Última semana</option>
+            <option>Último mês</option>
+            <option>Último trimestre</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Cards principais -->
+      <div id="cards" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-700 rounded-xl text-center p-4 shadow">
+          <p id="number" class="text-3xl font-bold">95%</p>
+          <p class="text-sm text-gray-300">Sucesso</p>
+        </div>
+        <div class="bg-gray-700 rounded-xl text-center p-4 shadow">
+          <p id="number" class="text-3xl font-bold">5%</p>
+          <p class="text-sm text-gray-300">Erro</p>
+        </div>
+        <div class="bg-gray-700 rounded-xl text-center p-4 shadow">
+          <p id="number" class="text-3xl font-bold">120</p>
+          <p class="text-sm text-gray-300">NFC</p>
+        </div>
+        <div class="bg-gray-700 rounded-xl text-center p-4 shadow">
+          <p id="number" class="text-3xl font-bold">450</p>
+          <p class="text-sm text-gray-300">Usuários</p>
+        </div>
+      </div>
+
+      <!-- Gráficos e insights -->
+      <div id="grafico-1" class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-start">
+        <div id="grafico-container" class="bg-gray-700 rounded-xl p-4 shadow w-[90%] md:w-[500px]">
+          <h3 class="text-sm font-semibold mb-2">
+            Taxa de sucesso por grupo demográfico
+          </h3>
+          <canvas id="barChart"></canvas>
+        </div>
+
+        <div id="grafico-2"
+          class="bg-gray-700 rounded-xl p-4 shadow w-[90%] md:w-[500px] flex items-center justify-between">
+          <div id="texto-grafico">
+            <h3 class="text-sm font-semibold mb-2">Insights / Alertas</h3>
+            <ul class="text-sm text-gray-300 list-disc pl-5 mb-4 space-y-1">
+              <li>O grupo B apresentou maior taxa de erro (12%).</li>
+              <li>O grupo A teve maior taxa de sucesso (98%).</li>
+            </ul>
+          </div>
+          <canvas id="pieChart" class="w-[150px] h-[150px]"></canvas>
+        </div>
+      </div>
+
+      <div id="evolucao" class="bg-gray-700 rounded-xl p-4 shadow mt-6">
+        <h3 class="text-sm font-semibold mb-2">
+          Evolução ao longo do período
+        </h3>
+        <canvas id="lineChart" width="1000" height="160"></canvas>
+        <p class="text-xs text-gray-400 mt-2 text-right">
+          Dados atualizados em: 29/09/2025
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Protótipo educativo | Facial Fair Access © Todos os direitos reservados
+  </footer>
+
+  <!-- Script dos gráficos -->
+  <script src="/js/dash.js"></script>
+</body>
+
+</html>

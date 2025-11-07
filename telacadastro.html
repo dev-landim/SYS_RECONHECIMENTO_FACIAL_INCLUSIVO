@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Facial Fair Access </title>
+    <link rel="stylesheet" href="/css/telacadastro.css">
+</head>
+<body>
+    <section class="cadastro">
+        <div class="container">
+        <h1>Cadastre-se</h1>
+        <p>Já possui uma conta? <a href="/login"> Faça Login </a></p>
+        <form  id= "formCadastro" action="/register" method="post">
+            <input type="text" name="usuario" placeholder="Usuário" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="password" name="senha_hash" placeholder="Senha" required>
+            <p id="message" >Use letras maiúsculas e mais de 8 caracteres.</p>
+            <button type="submit">Cadastrar</button>
+        </div>
+    </section>
+</body>
+</html>

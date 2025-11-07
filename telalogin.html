@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Facial Fair Access</title>
+  <link rel="stylesheet" href="./css/telalogin.css">
+</head>
+
+<body>
+  <section class="login">
+    <div class="container">
+      <h1>Login</h1>
+      <p>
+        Não tem uma conta? <a href="/register"> Faça cadastro </a>
+      </p>
+      <form id="formLogin" action="/login" method="post">
+        <input type="email" name="email" placeholder="E-mail" required />
+        <input type="password" name="senha_hash" placeholder="Senha" required />
+        <div class="remember">
+          <input type="checkbox" id="remember" name="remember" />
+          <label for="remember">Lembrar-me</label>
+          <a href="#">Esqueceu a senha?</a>
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </section>
+</body>
+
+</html>
