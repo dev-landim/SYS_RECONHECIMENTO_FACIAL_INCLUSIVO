@@ -165,8 +165,3 @@ Este projeto foi submetido ao **SAGA SENAI 2025** em resposta à demanda da empr
 
 ---
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
-
----
