@@ -14,12 +14,8 @@
 
 ---
 
-<!-- 💡 DICA: substitua o caminho abaixo por uma foto/GIF real do projeto funcionando -->
-<!-- Exemplo: ![Demo](./assets/demo.gif) -->
-<!-- Para converter vídeo em GIF: https://ezgif.com/video-to-gif -->
-
 <p align="center">
-  <img src="./assets/IMG_20251007_145503.jpg" width="45%" />
+  <img src="./assets/IMG_20251007_145503.jpg" width="80%" />
 </p>
 
 ---
@@ -78,15 +74,11 @@ Em vez de treinar um modelo com risco de perpetuar vieses, utilizamos o **FaceMe
 
 ## 📸 Registros do Projeto
 
-<!-- 💡 DICA: adicione suas fotos da apresentação aqui -->
-<!-- Exemplo:
 <p align="center">
-  <img src="./assets/foto1.jpg" width="45%" />
-  <img src="./assets/foto2.jpg" width="45%" />
+  <img src="./assets/IMG_20251007_145503.jpg" width="45%" />
+  <!-- Adicione mais fotos abaixo no mesmo formato -->
+  <!-- <img src="./assets/NOME_DA_FOTO.jpg" width="45%" /> -->
 </p>
--->
-
-> ⬆️ *Adicione aqui fotos da apresentação e do sistema em funcionamento*
 
 ---
 
@@ -176,5 +168,3 @@ Este projeto foi submetido ao **SAGA SENAI 2025** em resposta à demanda da empr
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
-
----
