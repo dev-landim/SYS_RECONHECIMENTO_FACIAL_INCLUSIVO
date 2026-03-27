@@ -15,7 +15,7 @@
 ---
 
 <p align="center">
-  <img src="./assets/IMG_20251007_145503.jpg" width="80%" />
+  <img src="./assets/motion_photo_3658304794409759675.jpg" width="52%" />
 </p>
 
 ---
@@ -75,8 +75,13 @@ Em vez de treinar um modelo com risco de perpetuar vieses, utilizamos o **FaceMe
 ## 📸 Registros do Projeto
 
 <p align="center">
-  <img src="./assets/IMG_20251007_145503.jpg" width="45%" />
   <!-- Adicione mais fotos abaixo no mesmo formato -->
+  <img src="./assets/motion_photo_2224016485432383625.jpg" width= 30%" />
+  &nbsp;
+  <img src="./assets/IMG-20251110-WA0072.jpg" width="30%" />
+    &nbsp;
+  <img src="./assets/IMG_20251007_145503.jpg" width="30%" />
+  
   <!-- <img src="./assets/NOME_DA_FOTO.jpg" width="45%" /> -->
 </p>
 
